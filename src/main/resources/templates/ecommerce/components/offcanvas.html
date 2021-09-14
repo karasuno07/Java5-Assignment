@@ -1,0 +1,92 @@
+<!-- Offcanvas Toggle Button -->
+<th:block th:fragment="offcanvas-toggle">
+    <a id="toggle-offcanvas" class="fixedButton" data-bs-toggle="offcanvas"
+       data-bs-target="#sidebar-offcanvas"
+       aria-controls="sidebar-offcanvas">
+        <div class="roundedFixedBtn">
+            Menu
+        </div>
+    </a>
+</th:block>
+<!-- Offcanvas Toggle Button Ends -->
+
+<!-- Offcanvas Menu -->
+<aside id="sidebar-offcanvas" class="offcanvas offcanvas-end" tabindex="-1"
+       th:fragment="offcanvas-menu">
+    <div id="sidebar-accordion" class="accordion">
+        <div class="accordion-item">
+            <div id="category-heading" class="accordion-header">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#category-collapse" aria-expanded="true"
+                        aria-controls="category-collapse"
+                        data-parent="#sidebar-accordion">
+                    <i class="fas fa-th-list"></i>
+                    <span class="ms-3">Category</span>
+                </button>
+            </div>
+            <div id="category-collapse" class="accordion-collapse collapse show"
+                 aria-labelledby="category-heading"
+                 data-bs-parent="#category-heading">
+                <div class="list-group">
+                    <a href="" class="list-group-item">Smartphone</a>
+                    <a href="" class="list-group-item">Tablet</a>
+                    <a href="" class="list-group-item">Laptop</a>
+                    <a href="" class="list-group-item">Accessories</a>
+                    <a href="" class="list-group-item">Others</a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div id="supplier-heading" class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#supplier-collapse"
+                        aria-expanded="false" aria-controls="supplier-collapse"
+                        data-parent="#sidebar-accordion">
+                    <i class="fas fa-trademark"></i>
+                    <span class="ms-3">Supplier</span>
+                </button>
+            </div>
+            <div id="supplier-collapse" class="accordion-collapse collapse"
+                 aria-labelledby="supplier-heading"
+                 data-bs-parent="#supplier-heading">
+                <div class="list-group">
+                    <a href="" class="list-group-item">Apple</a>
+                    <a href="" class="list-group-item">Xiaomi</a>
+                    <a href="" class="list-group-item">Samsung</a>
+                    <a href="" class="list-group-item">One plus</a>
+                    <a href="" class="list-group-item">Nokia</a>
+                    <a href="" class="list-group-item">Vivo</a>
+                    <a href="" class="list-group-item">Realme</a>
+                    <a href="" class="list-group-item">Oppo</a>
+                    <a href="" class="list-group-item">Vsmart</a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div id="origin-heading" class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#origin-collapse" aria-expanded="false"
+                        aria-controls="origin-collapse"
+                        data-parent="#sidebar-accordion">
+                    <i class="fas fa-city"></i>
+                    <span class="ms-3">Origin</span>
+                </button>
+            </div>
+            <div id="origin-collapse" class="accordion-collapse collapse"
+                 aria-labelledby="origin-heading"
+                 data-bs-parent="#origin-heading">
+                <div class="list-group">
+                    <a href="" class="list-group-item">United States</a>
+                    <a href="" class="list-group-item">China</a>
+                    <a href="" class="list-group-item">Korea</a>
+                    <a href="" class="list-group-item">Vietnam</a>
+                    <a href="" class="list-group-item">Japan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- Offcanvas Menu Ends -->

@@ -1,0 +1,61 @@
+<!-- Single Product -->
+<div class="single-product pt-150 pb-150" th:fragment="single-product(product)">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-5">
+            <div class="single-product-img">
+               <img alt="No image has found"
+                    th:src="@{/ecommerce/images/products/{image}(image=${product.image})}">
+            </div>
+         </div>
+
+         <div class="col-md-7 ps-5">
+            <div class="single-product-content">
+               <h3 th:text="${product.name}"></h3>
+               <div class="single-product-pricing">
+                            <span class="position-relative">
+                                [[${product.discount != null} ? ${#numbers.formatDecimal(product.price,3,0)} -
+                                ${#numbers.formatDecimal(product.discount,3,0)} :
+                                ${#numbers.formatDecimal(product.price,3,0)}]]
+                                <span class="badge bg-danger">10% off</span>
+                            </span>
+               </div>
+               <div class="single-product-description">
+                  <ul th:each="item : ${product.descriptions}">
+                     <li class="" th:text="${item.content}"></li>
+                  </ul>
+               </div>
+               <div>
+                            <span>
+                                <span class="fw-bold me-1">Category:</span>
+                                <span th:text="${product.category.name}"></span>
+                            </span>
+                  <span class="ms-3">
+                                <span class="fw-bold me-1">Supplier:</span>
+                                <span th:text="${product.supplier.name}"></span>
+                            </span>
+                  <span class="ms-3">
+                                <span class="fw-bold me-1">Origin:</span>
+                                <span th:text="${product.origin.name}"></span>
+                            </span>
+               </div>
+               <div class="single-product-form">
+                  <input min="1" placeholder="1" type="number">
+                  <a class="cart-btn" href="javascript:{}">
+                     <i class="fas fa-shopping-cart"></i>
+                     <span class="ms-1">Add to Cart</span>
+                  </a>
+               </div>
+               <h4>Share:</h4>
+               <ul class="product-share">
+                  <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                  <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                  <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Single Product Ends -->

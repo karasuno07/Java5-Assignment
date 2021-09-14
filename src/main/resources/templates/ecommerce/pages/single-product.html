@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+   <meta charset="UTF-8">
+   <meta content="IE=edge" http-equiv="X-UA-Compatible">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <!-- IMPORTANT!!! Fix MIME error -->
+   <base href="/">
+   <!-- Title -->
+   <title>Techstore</title>
+   <!-- Web Icon -->
+   <link rel="shortcut icon" th:href="@{/general/icon/favicon.png}"
+         type="image/png">
+   <!-- Google fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+         rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
+         rel="stylesheet">
+   <!-- Font Awesome -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+         rel="stylesheet">
+   <!-- Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+         rel="stylesheet">
+   <!-- Magnific Popup -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+         rel="stylesheet">
+   <!-- Animate -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+         rel="stylesheet">
+   <!-- Owl Carousel -->
+   <link rel="stylesheet" th:href="@{/ecommerce/css/owl.carousel.css}">
+   <link rel="stylesheet" th:href="@{/ecommerce/css/owl.theme.default.min.css}">
+   <!-- JQuery Meanmenu -->
+   <link media="all" rel="stylesheet" th:href="@{/ecommerce/css/meanmenu.css}"/>
+   <!-- Local Resources -->
+   <link rel="stylesheet" th:href="@{/ecommerce/css/main.css}">
+   <link rel="stylesheet" th:href="@{/ecommerce/css/responsive.css}">
+   <link rel="stylesheet" th:href="@{/ecommerce/css/product.css}">
+</head>
+
+<body>
+
+<th:block th:insert="ecommerce/components/preloader"></th:block>
+
+<th:block th:insert="ecommerce/components/header"></th:block>
+
+<!-- Main Content -->
+<th:block
+      th:insert="ecommerce/components/breadcrumb :: breadcrumb(title='See more Details', detail=${product.name})">
+</th:block>
+
+<!-- Product Details -->
+<th:block
+      th:insert="ecommerce/components/single-product :: single-product(product=${product})"></th:block>
+
+<th:block
+      th:insert="ecommerce/components/relative-products :: relative-products(list=${relatives})"></th:block>
+
+<!-- Product Details End -->
+
+<!-- Main Ends -->
+
+<th:block th:insert="ecommerce/components/carousel"></th:block>
+
+<th:block th:insert="ecommerce/components/footer"></th:block>
+
+<th:block th:insert="ecommerce/components/copyright"></th:block>
+
+<!-- JQuery 3.6.0 -->
+<script src="https://code.jquery.com/jquery-3.6.0.js "></script>
+<!-- Boostrap JS -->
+<script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js "></script>
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js "></script>
+<!-- Countdown plugin -->
+<script th:src="@{/ecommerce/js/jquery.countdown.js} "></script>
+<!-- Isotope plugin -->
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js "></script>
+<!-- Waypoints plugin -->
+<script th:src="@{/ecommerce/js/jquery.waypoints.js} "></script>
+<!-- Owl Carousol plugin -->
+<script th:src="@{/ecommerce/js/owl.carousel.js} "></script>
+<!-- Magnific Popup plugin -->
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js "></script>
+<!-- Sticky plugin -->
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js "></script>
+<!-- Meanmenu plugin -->
+<script th:src="@{/ecommerce/js/jquery.meanmenu.js} "></script>
+<!-- Main JS -->
+<script th:src="@{/ecommerce/js/main.js} "></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<div class="row" th:fragment="product-list(list)">
+   <th:block th:each="item : ${list}">
+      <div class="col-lg-4 col-md-6 text-center">
+         <div class="single-product-item">
+            <div class="product-image">
+               <a th:href="@{product/{tag}/{id}(tag=${item.category.tag},id=${item.id})}">
+                  <img alt=""
+                       th:src="@{/ecommerce/images/products/{image}(image=${item.image})}">
+               </a>
+            </div>
+            <h3 th:text="${item.name}"></h3>
+            <p class="product-price">
+                        <span class="position-relative">
+                            [[${item.discount != null} ? ${#numbers.formatDecimal(item.price,3,0)} -
+                            ${#numbers.formatDecimal(item.discount,3,0)} :
+                            ${#numbers.formatDecimal(item.price,3,0)}]]
+                            <span class="badge bg-danger">10% off</span>
+                        </span>
+            </p>
+            <a class="cart-btn" href="javascript:{}">
+               <i class="fas fa-shopping-cart"></i>
+               <span class="ms-1">Add to Cart</span>
+            </a>
+         </div>
+      </div>
+   </th:block>
+</div>

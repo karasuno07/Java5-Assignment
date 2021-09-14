@@ -1,0 +1,263 @@
+<!-- Cart Details -->
+<div class="cart-section" th:fragment="cart">
+
+   <!-- Local Resources -->
+   <link rel="stylesheet" th:href="@{/ecommerce/css/cart.css}" type="text/css">
+   <script th:src="@{/ecommerce/js/cart.js}"></script>
+   <!-- Local Resources Ends -->
+
+   <div class="cart-container">
+      <!-- Steps Navigation -->
+      <div class="steps">
+         <ul>
+            <li class="cart col-sm-4 step active">
+               <span><i class="fas fa-shopping-cart"></i></span>
+               <span>My Cart</span>
+               <span>
+                            <a class="span-number">1</a>
+                        </span>
+            </li>
+            <li class="checkout col-sm-4 step">
+               <span><i class="fas fa-dollar-sign"></i></span>
+               <span>Checkout</span>
+               <span>
+                            <a class="span-number">2</a>
+                        </span>
+            </li>
+            <li class="finish col-sm-4 step">
+               <span><i class="fas fa-check"></i></span>
+               <span>Finish</span>
+               <span>
+                            <a class="span-number">3</a>
+                        </span>
+            </li>
+         </ul>
+      </div>
+      <!-- Steps Navigation Ends -->
+
+      <div class="row">
+         <!-- Cart -->
+         <div class="col-xl-9 col-lg-8" id="cart-section">
+            <div class="card">
+               <div class="card-header fw-bold">MY CART DETAILS</div>
+               <div class="card-body" id="cart-list">
+                  <div class="cart-product row shadow">
+                     <div class="cart-product-image col-lg-4 col-md-5 col-sm-6">
+                        <img alt=""
+                             th:src="@{/ecommerce/images/products/iphone12.png}">
+                     </div>
+
+                     <div class="cart-product-info col-lg-8 col-md-7 col-sm-6">
+                        <ul>
+                           <div class="row">
+                              <div class="col-md-8">
+                                 <li class="product-name">Iphone 12</li>
+                                 <li>1001</li>
+                                 <li>$ 900</li>
+                                 <li>Category:</li>
+                                 <li>Supplier:</li>
+                                 <li>Origin:</li>
+                              </div>
+                              <div class="col-md-4 col-total-price">
+                                 <li class="product-total-price">Total Price
+                                 </li>
+                                 <li>1000</li>
+                              </div>
+                           </div>
+                           <li class="product-action">
+                              <div class="input-group inline-group">
+                                 <button class="btn btn-minus">
+                                    <i class="fa fa-minus"></i>
+                                 </button>
+                                 <input class="form-control quantity" min="1"
+                                        name="quantity" type="number"
+                                        value="1">
+                                 <button class="btn btn-plus">
+                                    <i class="fa fa-plus"></i>
+                                 </button>
+                              </div>
+                              <button class="btn btn-remove ms-auto"
+                                      data-bs-target="#removeModal"
+                                      data-bs-toggle="modal"
+                                      type="button">
+                                 <i class="fas fa-trash-alt"></i>
+                              </button>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+
+
+               </div>
+            </div>
+         </div>
+         <!-- Cart Ends -->
+
+         <!-- Checkout -->
+
+         <div class="col-xl-9 col-lg-8" id="checkout-section">
+            <div class="card">
+               <div class="card-body">
+
+                  <div class="row">
+                     <div class="col-md-6 visa-card">
+                        <div class="image">
+                           <img alt=""
+                                th:src="@{/general/background/visa.png}"
+                                width="100%">
+                        </div>
+                     </div>
+                     <div class="delivery-info-form col-md-6">
+                        <div class="mb-3">
+                           <h3>Delivery Info</h3>
+                        </div>
+                        <div class="row mb-3">
+                           <label>Recipient's Name</label>
+                           <div class="col">
+                              <input class="form-control" name="firstName"
+                                     placeholder="Enter Last Name"
+                                     type="text">
+                           </div>
+                           <div class="col">
+                              <input class="form-control" name="lastName"
+                                     placeholder="Enter Last Name"
+                                     type="text">
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <label>Recipient's Email</label>
+                           <div class="input-group">
+                              <span class="input-group-text"><i
+                                    class="fas fa-at"></i></span>
+                              <input class="form-control" name="email"
+                                     placeholder="Enter Email Address"
+                                     type="email">
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <label>Recipient's Address</label>
+                           <div class="input-group">
+                              <span class="input-group-text"><i
+                                    class="fas fa-map-marker-alt"></i></span>
+                              <input class="form-control" name="address"
+                                     placeholder="Enter Delivery Address"
+                                     type="text">
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <label>Recipient's Phone Number</label>
+                           <div class="input-group">
+                              <span class="input-group-text"><i
+                                    class="fas fa-phone-alt"></i></span>
+                              <input class="form-control" name="phoneNumber"
+                                     placeholder="Enter Recipient's Phone Number"
+                                     type="tel">
+                           </div>
+                        </div>
+                        <div class="mb-0">
+                           <label>Payment Method</label>
+                           <select class="form-control" name="">
+                              <option value="COD">COD</option>
+                              <option value="Paypal">Paypal</option>
+                              <option value="Credit">Credit Card</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Checkout Ends -->
+
+         <!-- Cart Action -->
+         <div class="col-xl-3 col-lg-4">
+            <!-- Summary -->
+            <div class="card summary">
+               <div class="card-header"><span
+                     class="fw-bold">ORDER SUMMARY</span></div>
+               <div class="card-body">
+                  <ul>
+                     <li>
+                        <span class="fw-bold me-1">Subtotal:</span>
+                        <span></span>
+                     </li>
+                     <li>
+                        <span class="fw-bold me-1">Discount:</span>
+                        <span></span>
+                     </li>
+                     <li>
+                        <span class="fw-bold me-1">Taxes:</span>
+                        <span></span>
+                     </li>
+                     <li>
+                        <span class="fw-bold me-1">Shipping Fee:</span>
+                        <span></span>
+                     </li>
+                     <hr>
+                     <li>
+                        <span class="fw-bold me-1">Total:</span>
+                        <span></span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- Summary Ends -->
+
+            <!-- Apply Voucher -->
+            <div class="card voucher">
+               <div class="card-header">
+                  <span class="fw-bold">VOUCHER CODE</span>
+               </div>
+               <div class="card-body">
+                  <div class="d-flex">
+                     <input class="form-control" type="text">
+                     <button class="btn btn-apply ms-auto">Apply</button>
+                  </div>
+               </div>
+            </div>
+            <!-- Apply Voucher Ends -->
+
+            <!-- Button Action -->
+            <div class="action-section">
+               <button class="btn btn-shopping">
+                  <i class="fas fa-shopping-bag"></i>
+                  <span class="ms-1">Shop more</span>
+               </button>
+               <button class="btn btn-checkout">
+                  <i class="fas fa-money-check"></i>
+                  <span class="ms-1">Checkout</span>
+               </button>
+            </div>
+            <!-- Button Action Ends -->
+         </div>
+         <!-- Cart Action Ends -->
+
+      </div>
+
+   </div>
+
+   <!-- Remove modal -->
+   <div aria-hidden="true" aria-labelledby="removeModalLabel" class="modal fade"
+        id="removeModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button aria-label="Close" class="btn-close"
+                       data-bs-dismiss="modal"
+                       type="button"></button>
+            </div>
+            <div class="modal-body">
+               <span>Are you sure want to remove this product?</span>
+            </div>
+            <div class="modal-footer">
+               <button class="btn btn-cancel" data-bs-dismiss="modal"
+                       type="button">Close
+               </button>
+               <button class="btn btn-ok" type="button">Remove</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Cart Ends -->

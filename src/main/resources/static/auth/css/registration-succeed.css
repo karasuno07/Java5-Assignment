@@ -1,0 +1,36 @@
+.container-fluid::after {
+    content: "";
+    opacity: 0.5;
+    background-image: url(../image/lading-bg.jpg);
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.wrapper {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    background: #dfdfdf;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+.home-link,
+.login-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
